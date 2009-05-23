@@ -1,0 +1,6 @@
+= Resize.js
+
+This is Javasript library for easily resizing html elements. It requries Prototype.
+Please, view examples.
+
+Copyright (c) 2009 Mikhail Tabunov, released under the MIT license

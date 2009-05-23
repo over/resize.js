@@ -1,0 +1,145 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html lang="ru">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<title>Resize js example</title>
+	<script src="../src/prototype.js" type="text/javascript"></script>
+	<script src="../src/resize.js" type="text/javascript"></script>
+	<style>
+		div.widget { 
+			border: 1px dashed #000;
+			background: #dae7fd;
+		}
+		div.widget div.corner { 
+			position: absolute; width: 7px; height: 7px; 
+			background: url(draggable-icon.gif) left top no-repeat; cursor: pointer;
+		}
+		
+		body { background: #CCC; }
+		div.content { margin: 10px auto 10px auto; background: #FFF; padding: 10px; padding-bottom: 60px; width: 960px; }
+		
+		pre { padding-left: 20px; border-left: 4px solid #666; }
+	</style>
+</head>
+<body>
+	<div class="content">
+		<h1>This is prototype and script.aculo.us library for javascript html elements resizing</h1>
+		<p><a href="../src/resize.js">Download here</a></p>
+		<p>I used these styles for examples</p>
+<p><pre><code>
+&lt;style&gt;
+	div.widget { 
+		border: 1px dashed #000;
+		background: #CCC;
+	}
+	div.widget div.corner { 
+		position: absolute; width: 7px; height: 7px; 
+		background: url(draggable-icon.gif) left top no-repeat; cursor: pointer;
+	}
+
+	body { background: #666; }
+	div.content { margin: 10px auto 10px 20px; background: #FFF; padding: 10px; height: 900px; width: 600px; }
+&lt;/style&gt;		
+</code></pre></p>
+		<h3>Resizable div</h3>
+		<p>
+			<div class="widget" id="widget0" style="width: 100px; height: 100px; position: relative;">
+				Some text inside
+			</div>
+		</p>
+		<p><pre>
+			<code>
+&lt;div class=&quot;widget&quot; id=&quot;widget0&quot; style=&quot;width: 100px; height: 100px; position: relative;&quot;&gt;
+	Some text inside
+&lt;/div&gt;				
+				
+&lt;script type=&quot;text/javascript&quot;&gt;
+	new Resizable($(&#x27;widget0&#x27;), {
+		minWidth: 50,
+		minHeight: 50
+	})
+&lt;/script&gt;
+			</code>
+			</pre>
+		</p>
+		<script type="text/javascript">
+			new Resizable($('widget0'), {
+				minWidth: 50,
+				minHeight: 50
+			})
+		</script>		
+		
+
+		<h3>Resizable div with snap</h3>
+		<p>
+			<div class="widget" id="widget1" style="width: 100px; height: 100px; position: relative;">
+				Some text inside
+			</div>
+		</p>
+		<p><pre>
+			<code>
+&lt;div class=&quot;widget&quot; id=&quot;widget1&quot; style=&quot;width: 100px; height: 100px; position: relative;&quot;&gt;
+	Some text inside
+&lt;/div&gt;				
+				
+&lt;script type=&quot;text/javascript&quot;&gt;
+	new Resizable($(&#x27;widget1&#x27;), {
+		minWidth: 50,
+		minHeight: 50,
+		snap: [10, 10]
+	})
+&lt;/script&gt;
+			</code>
+			</pre>
+		</p>
+		<script type="text/javascript">
+			new Resizable($('widget1'), {
+				minWidth: 50,
+				minHeight: 50,
+				snap: [10, 10]
+			})
+		</script>
+		
+		
+		<h3>Resizable div with callbacks</h3>
+		<p>
+			<div class="widget" id="widget2" style="width: 100px; height: 100px; position: relative;">
+				Some text inside
+			</div>
+		</p>
+		<p><pre>
+			<code>
+&lt;div class=&quot;widget&quot; id=&quot;widget2&quot; style=&quot;width: 100px; height: 100px; position: relative;&quot;&gt;
+	Some text inside
+&lt;/div&gt;
+
+&lt;script type=&quot;text/javascript&quot;&gt;
+	new Resizable($(&#x27;widget2&#x27;), {
+		minWidth: 100,
+		minHeight: 50,
+		onStart: function() {
+			$(&#x27;widget2&#x27;).setStyle({&quot;background&quot;: &quot;#F00&quot;})
+		},
+		onEnd: function() {
+			$(&#x27;widget2&#x27;).setStyle({&quot;background&quot;: &quot;#dae7fd&quot;})
+		}
+	})
+&lt;/script&gt;
+			</code>
+			</pre>
+		</p>
+		<script type="text/javascript">
+			new Resizable($('widget2'), {
+				minWidth: 100,
+				minHeight: 50,
+				onStart: function() {
+					$('widget2').setStyle({"background": "#F00"})
+				},
+				onEnd: function() {
+					$('widget2').setStyle({"background": "#dae7fd"})
+				}
+			})
+		</script>
+	</div>
+</body>
+</html>

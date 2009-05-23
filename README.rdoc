@@ -2,6 +2,7 @@
 
 This is Javasript library for easily resizing html elements. It requries Prototype.
 Please, view examples.
+
 http://resize-js.mikhailtabunov.com/
 
 Copyright (c) 2009 Mikhail Tabunov, released under the MIT license
